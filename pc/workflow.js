@@ -1,4 +1,4 @@
-const machine = new AppMachine({
+const machine = Ubox.setMachine({
   initialState: "welcome",
   paths: {
     welcome: { next: "chat" },
@@ -6,21 +6,16 @@ const machine = new AppMachine({
   },
 });
 
-machine.welcome = {
-  entry: () => {},
-};
-machine.chat = {
-  entry: () => {
-    document.getElementById("welcome").classList.add("header");
-    document.getElementById("chat").style.display = "block";
-  },
-  exit: () => {
-    document.getElementById("welcome").classList.remove("header");
-    document.getElementById("chat").style.display = "none";
-  },
-};
+Ubox.Event.registerEntry("chat", () => {
+  document.getElementById("welcome").classList.add("header");
+  document.getElementById("chat").style.display = "block";
+});
+Ubox.Event.registerExit("chat", () => {
+  document.getElementById("welcome").classList.remove("header");
+  document.getElementById("chat").style.display = "none";
+});
 
-machine[machine.state].entry();
+machine.init();
 
 const mobileLink = "https://studio.ubox.world/";
 const qrContainer = document.getElementById("qr-code");
