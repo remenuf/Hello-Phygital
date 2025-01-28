@@ -1,0 +1,136 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+:root {
+  --font-principal: "Roboto", sans-serif;
+}
+
+body,
+html,
+#myDiv {
+  background-color: #0e0e0e;
+  color: #fff;
+  font-family: var(--font-principal);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+#main-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: 90%;
+  aspect-ratio: 9/16;
+  margin: auto;
+  background-color: #314252;
+  border-radius: 24px;
+  border: solid 3px #fff;
+}
+
+#welcome h1,
+#welcome p {
+  text-align: center;
+  margin: 0.5rem;
+}
+
+#welcome h1 {
+  font-size: 3rem;
+}
+
+#qr-code {
+  width: 320px;
+  aspect-ratio: 1;
+  background-color: #fff;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: solid 5px #0091db;
+}
+
+.header {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  gap: 12px;
+  height: 150px;
+}
+
+.header #qr-code {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.header h1 {
+  font-size: 2rem !important;
+}
+
+#chat {
+  display: none;
+  padding: 1.5rem 0;
+  width: 95%;
+  height: 95%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-color: #fff transparent;
+  scrollbar-width: thin;
+}
+
+#chat-container {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1.5rem;
+  justify-content: flex-end;
+}
+
+.message-box {
+  padding: 1.5rem 1rem 0.5rem 1rem;
+  margin-right: auto;
+  background-color: rgb(114, 171, 221);
+  width: auto;
+  max-width: calc(100% - 60px);
+  min-width: 100px;
+  border-radius: 1rem;
+  position: relative;
+  left: 60px;
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+.message-box .avatar {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -60px;
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  background-color: aquamarine;
+}
+
+.message-box .username {
+  font-size: 0.8rem;
+  position: absolute;
+  top: 5px;
+  left: 1rem;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello Phygital</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <section id="chat">
+        <div id="chat-container"></div>
+      </section>
+      <section id="chatbox">
+        <div id="avatar-picker">
+          <div id="selection" class="collapsed">
+            <span class="red" data-color="red"></span>
+            <span class="blue selected" data-color="blue"></span>
+            <span class="green" data-color="green"></span>
+            <span class="yellow" data-color="yellow"></span>
+          </div>
+        </div>
+        <p contenteditable="true" id="message"></p>
+        <button type="button" id="send" onclick="submitMsg()">V</button>
+      </section>
+    </div>
+    <script src="ubox.js"></script>
+    <script src="logic.js"></script>
+  </body>
+</html>
